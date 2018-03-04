@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/main_loop.ogg-d057653ffd9b61494abf9486eaf17c35.oggstr"
+
+[deps]
+
+source_file="res://screens/game_screen/main_loop.ogg"
+source_md5="043305a84dd231aceeb9b9085a4bd7f1"
+
+dest_files=[ "res://.import/main_loop.ogg-d057653ffd9b61494abf9486eaf17c35.oggstr" ]
+dest_md5="a4836c015ec204e04a7c29e7116ea735"
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,1202 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://screens/basic_screen.tscn" type="PackedScene" id=1]
+[ext_resource path="res://screens/splash_screen/background.png" type="Texture" id=2]
+[ext_resource path="res://screens/credit_screen/logo.png" type="Texture" id=3]
+[ext_resource path="res://screens/theme.tres" type="Theme" id=4]
+[ext_resource path="res://screens/GaroaHackerClubeBold.otf" type="DynamicFontData" id=5]
+
+[sub_resource type="ViewportTexture" id=3]
+
+resource_local_to_scene = true
+flags = 0
+viewport_path = NodePath("CreditsViewport")
+
+[sub_resource type="GDScript" id=2]
+
+script/source = "extends ParallaxBackground
+signal back
+func _process(delta):
+	$ParallaxLayer.motion_offset.y -= 30 * delta
+
+	if Input.is_action_just_pressed(\"interact\") or Input.is_action_just_pressed(\"ui_accept\"):
+		emit_signal(\"back\")"
+
+[sub_resource type="DynamicFont" id=1]
+
+size = 32
+use_mipmaps = true
+use_filter = true
+extra_spacing_top = 4
+font_data = ExtResource( 5 )
+_sections_unfolded = [ "Extra Spacing", "Font" ]
+
+[node name="CreditScreen" index="0" instance=ExtResource( 1 )]
+
+_sections_unfolded = [ "Rect", "Theme" ]
+next_scene = "res://screens/main_screen/main_screen.tscn"
+
+[node name="Transition" parent="." index="1"]
+
+layer = 2
+
+[node name="Background" type="TextureRect" parent="." index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1024.0
+margin_bottom = 600.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 2 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="Top" type="HBoxContainer" parent="." index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 8.0
+margin_right = 1024.0
+margin_bottom = 136.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_constants/separation = 15
+alignment = 0
+_sections_unfolded = [ "Rect", "custom_constants" ]
+
+[node name="Pigdev" type="TextureRect" parent="Top" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1024.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 128, 128 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 6
+_sections_unfolded = [ "Size Flags" ]
+
+[node name="Tools" type="VBoxContainer" parent="." index="4"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 542.0
+margin_right = 1024.0
+margin_bottom = 600.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+_sections_unfolded = [ "Rect", "Size Flags" ]
+
+[node name="Label" type="Label" parent="Tools" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1024.0
+margin_bottom = 17.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "an open source game made with the following open source tools:"
+align = 1
+valign = 1
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect" ]
+
+[node name="List" type="HBoxContainer" parent="Tools" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 21.0
+margin_right = 1024.0
+margin_bottom = 58.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 0
+_sections_unfolded = [ "Size Flags" ]
+
+[node name="Tool" type="Label" parent="Tools/List" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 10.0
+margin_right = 201.0
+margin_bottom = 27.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+text = "godot engine"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Size Flags" ]
+
+[node name="Tool_2" type="Label" parent="Tools/List" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 205.0
+margin_top = 10.0
+margin_right = 406.0
+margin_bottom = 27.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+text = "inkscape"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Size Flags" ]
+
+[node name="Tool_3" type="Label" parent="Tools/List" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 410.0
+margin_top = 10.0
+margin_right = 611.0
+margin_bottom = 27.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+text = "lmms"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Size Flags" ]
+
+[node name="Tool_4" type="Label" parent="Tools/List" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 615.0
+margin_top = 10.0
+margin_right = 816.0
+margin_bottom = 27.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+text = "musescore"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Size Flags" ]
+
+[node name="Tool_5" type="Label" parent="Tools/List" index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 820.0
+margin_top = 10.0
+margin_right = 1024.0
+margin_bottom = 27.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+text = "gimp"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Size Flags" ]
+
+[node name="Credits" type="Sprite" parent="." index="5"]
+
+position = Vector2( 0, 139 )
+texture = SubResource( 3 )
+centered = false
+_sections_unfolded = [ "Offset" ]
+
+[node name="CreditsViewport" type="Viewport" parent="." index="6"]
+
+arvr = false
+size = Vector2( 1024, 360 )
+own_world = false
+world = null
+transparent_bg = true
+msaa = 0
+hdr = false
+disable_3d = true
+usage = 0
+debug_draw = 0
+render_target_v_flip = true
+render_target_clear_mode = 0
+render_target_update_mode = 2
+audio_listener_enable_2d = false
+audio_listener_enable_3d = false
+physics_object_picking = false
+gui_disable_input = false
+gui_snap_controls_to_pixels = true
+shadow_atlas_size = 0
+shadow_atlas_quad_0 = 2
+shadow_atlas_quad_1 = 2
+shadow_atlas_quad_2 = 3
+shadow_atlas_quad_3 = 4
+_sections_unfolded = [ "Render Target" ]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="CreditsViewport" index="0"]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+scroll_offset = Vector2( 0, 0 )
+scroll_base_offset = Vector2( 0, 0 )
+scroll_base_scale = Vector2( 1, 1 )
+scroll_limit_begin = Vector2( 0, 0 )
+scroll_limit_end = Vector2( 0, 0 )
+scroll_ignore_camera_zoom = true
+script = SubResource( 2 )
+_sections_unfolded = [ "Scroll" ]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="CreditsViewport/ParallaxBackground" index="0"]
+
+motion_scale = Vector2( 1, 1 )
+motion_offset = Vector2( 0, 0 )
+motion_mirroring = Vector2( 0, 750 )
+_sections_unfolded = [ "Motion", "Transform" ]
+
+[node name="Credits" type="Container" parent="CreditsViewport/ParallaxBackground/ParallaxLayer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 100.0
+margin_right = 1024.0
+margin_bottom = 461.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 4 )
+_sections_unfolded = [ "Rect", "Scroll", "Theme" ]
+
+[node name="Categories" type="VBoxContainer" parent="CreditsViewport/ParallaxBackground/ParallaxLayer/Credits" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1012.0
+margin_bottom = 468.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 8
+alignment = 0
+_sections_unfolded = [ "Size Flags", "custom_constants" ]
+
+[node name="Audio" type="Label" parent="CreditsViewport/ParallaxBackground/ParallaxLayer/Credits/Categories" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1012.0
+margin_bottom = 36.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+text = "audio"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Theme", "custom_colors", "custom_fonts" ]
+
+[node name="Topic_11" type="HBoxContainer" parent="CreditsViewport/ParallaxBackground/ParallaxLayer/Credits/Categories" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 44.0
+margin_right = 1012.0
+margin_bottom = 61.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_constants/separation = 16
+alignment = 0
+_sections_unfolded = [ "custom_constants" ]
+
+[node name="What" type="Label" parent="CreditsViewport/ParallaxBackground/ParallaxLayer/Credits/Categories/Topic_11" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 498.0
+margin_bottom = 17.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+text = "background music"
+align = 2
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Who" type="Label" parent="CreditsViewport/ParallaxBackground/ParallaxLayer/Credits/Categories/Topic_11" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 514.0
+margin_right = 1012.0
+margin_bottom = 17.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+text = "laurence from staircase studios"
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Topic_12" type="HBoxContainer" parent="CreditsViewport/ParallaxBackground/ParallaxLayer/Credits/Categories" index="2"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 69.0
+margin_right = 1012.0
+margin_bottom = 86.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_constants/separation = 16
+alignment = 0
+_sections_unfolded = [ "custom_constants" ]
+
+[node name="What" type="Label" parent="CreditsViewport/ParallaxBackground/ParallaxLayer/Credits/Categories/Topic_12" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 498.0
+margin_bottom = 17.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+text = "major sound effects"
+align = 2
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Who" type="Label" parent="CreditsViewport/ParallaxBackground/ParallaxLayer/Credits/Categories/Topic_12" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 514.0
+margin_right = 1012.0
+margin_bottom = 17.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+text = "henrique campos"
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Design" type="Label" parent="CreditsViewport/ParallaxBackground/ParallaxLayer/Credits/Categories" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 94.0
+margin_right = 1012.0
+margin_bottom = 130.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+text = "design"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Theme", "custom_colors", "custom_fonts" ]
+
+[node name="Topic_3" type="HBoxContainer" parent="CreditsViewport/ParallaxBackground/ParallaxLayer/Credits/Categories" index="4"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 138.0
+margin_right = 1012.0
+margin_bottom = 155.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_constants/separation = 16
+alignment = 0
+_sections_unfolded = [ "custom_constants" ]
+
+[node name="What" type="Label" parent="CreditsViewport/ParallaxBackground/ParallaxLayer/Credits/Categories/Topic_3" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 498.0
+margin_bottom = 17.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+text = "user interface"
+align = 2
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Who" type="Label" parent="CreditsViewport/ParallaxBackground/ParallaxLayer/Credits/Categories/Topic_3" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 514.0
+margin_right = 1012.0
+margin_bottom = 17.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+text = "henrique campos"
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Topic_4" type="HBoxContainer" parent="CreditsViewport/ParallaxBackground/ParallaxLayer/Credits/Categories" index="5"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 163.0
+margin_right = 1012.0
+margin_bottom = 180.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_constants/separation = 16
+alignment = 0
+_sections_unfolded = [ "custom_constants" ]
+
+[node name="What" type="Label" parent="CreditsViewport/ParallaxBackground/ParallaxLayer/Credits/Categories/Topic_4" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 498.0
+margin_bottom = 17.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+text = "main character"
+align = 2
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Who" type="Label" parent="CreditsViewport/ParallaxBackground/ParallaxLayer/Credits/Categories/Topic_4" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 514.0
+margin_right = 1012.0
+margin_bottom = 17.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+text = "henrique campos"
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Topic_5" type="HBoxContainer" parent="CreditsViewport/ParallaxBackground/ParallaxLayer/Credits/Categories" index="6"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 188.0
+margin_right = 1012.0
+margin_bottom = 205.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_constants/separation = 16
+alignment = 0
+_sections_unfolded = [ "custom_constants" ]
+
+[node name="What" type="Label" parent="CreditsViewport/ParallaxBackground/ParallaxLayer/Credits/Categories/Topic_5" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 498.0
+margin_bottom = 17.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+text = "game concept"
+align = 2
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Who" type="Label" parent="CreditsViewport/ParallaxBackground/ParallaxLayer/Credits/Categories/Topic_5" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 514.0
+margin_right = 1012.0
+margin_bottom = 17.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+text = "henrique campos"
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Topic_6" type="HBoxContainer" parent="CreditsViewport/ParallaxBackground/ParallaxLayer/Credits/Categories" index="7"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 213.0
+margin_right = 1012.0
+margin_bottom = 230.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_constants/separation = 16
+alignment = 0
+_sections_unfolded = [ "custom_constants" ]
+
+[node name="What" type="Label" parent="CreditsViewport/ParallaxBackground/ParallaxLayer/Credits/Categories/Topic_6" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 498.0
+margin_bottom = 17.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+text = "side elements"
+align = 2
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Who" type="Label" parent="CreditsViewport/ParallaxBackground/ParallaxLayer/Credits/Categories/Topic_6" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 514.0
+margin_right = 1012.0
+margin_bottom = 17.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+text = "henrique campos"
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Engineering" type="Label" parent="CreditsViewport/ParallaxBackground/ParallaxLayer/Credits/Categories" index="8"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 238.0
+margin_right = 1012.0
+margin_bottom = 274.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+text = "engineering"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Theme", "custom_colors", "custom_fonts" ]
+
+[node name="Topic" type="HBoxContainer" parent="CreditsViewport/ParallaxBackground/ParallaxLayer/Credits/Categories" index="9"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 282.0
+margin_right = 1012.0
+margin_bottom = 299.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_constants/separation = 16
+alignment = 0
+_sections_unfolded = [ "custom_constants" ]
+
+[node name="What" type="Label" parent="CreditsViewport/ParallaxBackground/ParallaxLayer/Credits/Categories/Topic" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 498.0
+margin_bottom = 17.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+text = "core mecanics"
+align = 2
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Who" type="Label" parent="CreditsViewport/ParallaxBackground/ParallaxLayer/Credits/Categories/Topic" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 514.0
+margin_right = 1012.0
+margin_bottom = 17.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+text = "henrique campos"
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Graphics" type="Label" parent="CreditsViewport/ParallaxBackground/ParallaxLayer/Credits/Categories" index="10"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 307.0
+margin_right = 1012.0
+margin_bottom = 343.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+text = "graphics"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Focus", "Theme", "custom_colors", "custom_fonts" ]
+
+[node name="Topic_7" type="HBoxContainer" parent="CreditsViewport/ParallaxBackground/ParallaxLayer/Credits/Categories" index="11"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 351.0
+margin_right = 1012.0
+margin_bottom = 368.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_constants/separation = 16
+alignment = 0
+_sections_unfolded = [ "custom_constants" ]
+
+[node name="What" type="Label" parent="CreditsViewport/ParallaxBackground/ParallaxLayer/Credits/Categories/Topic_7" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 498.0
+margin_bottom = 17.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+text = "animations"
+align = 2
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Who" type="Label" parent="CreditsViewport/ParallaxBackground/ParallaxLayer/Credits/Categories/Topic_7" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 514.0
+margin_right = 1012.0
+margin_bottom = 17.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+text = "henrique campos"
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Topic_8" type="HBoxContainer" parent="CreditsViewport/ParallaxBackground/ParallaxLayer/Credits/Categories" index="12"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 376.0
+margin_right = 1012.0
+margin_bottom = 393.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_constants/separation = 16
+alignment = 0
+_sections_unfolded = [ "custom_constants" ]
+
+[node name="What" type="Label" parent="CreditsViewport/ParallaxBackground/ParallaxLayer/Credits/Categories/Topic_8" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 498.0
+margin_bottom = 17.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+text = "main character"
+align = 2
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Who" type="Label" parent="CreditsViewport/ParallaxBackground/ParallaxLayer/Credits/Categories/Topic_8" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 514.0
+margin_right = 1012.0
+margin_bottom = 17.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+text = "henrique campos"
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Topic_9" type="HBoxContainer" parent="CreditsViewport/ParallaxBackground/ParallaxLayer/Credits/Categories" index="13"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 401.0
+margin_right = 1012.0
+margin_bottom = 418.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_constants/separation = 16
+alignment = 0
+_sections_unfolded = [ "custom_constants" ]
+
+[node name="What" type="Label" parent="CreditsViewport/ParallaxBackground/ParallaxLayer/Credits/Categories/Topic_9" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 498.0
+margin_bottom = 17.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+text = "side characters"
+align = 2
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Who" type="Label" parent="CreditsViewport/ParallaxBackground/ParallaxLayer/Credits/Categories/Topic_9" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 514.0
+margin_right = 1012.0
+margin_bottom = 17.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+text = "henrique campos"
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Topic_10" type="HBoxContainer" parent="CreditsViewport/ParallaxBackground/ParallaxLayer/Credits/Categories" index="14"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 426.0
+margin_right = 1012.0
+margin_bottom = 443.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_constants/separation = 16
+alignment = 0
+_sections_unfolded = [ "custom_constants" ]
+
+[node name="What" type="Label" parent="CreditsViewport/ParallaxBackground/ParallaxLayer/Credits/Categories/Topic_10" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 498.0
+margin_bottom = 17.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+text = "enviroment"
+align = 2
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Who" type="Label" parent="CreditsViewport/ParallaxBackground/ParallaxLayer/Credits/Categories/Topic_10" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 514.0
+margin_right = 1012.0
+margin_bottom = 17.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+text = "kenney from kenneynl"
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Topic_14" type="HBoxContainer" parent="CreditsViewport/ParallaxBackground/ParallaxLayer/Credits/Categories" index="15"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 451.0
+margin_right = 1012.0
+margin_bottom = 468.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_constants/separation = 16
+alignment = 0
+_sections_unfolded = [ "custom_constants" ]
+
+[node name="What" type="Label" parent="CreditsViewport/ParallaxBackground/ParallaxLayer/Credits/Categories/Topic_14" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 498.0
+margin_bottom = 17.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+text = "font garoa hacker clube"
+align = 2
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Who" type="Label" parent="CreditsViewport/ParallaxBackground/ParallaxLayer/Credits/Categories/Topic_14" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 514.0
+margin_right = 1012.0
+margin_bottom = 17.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+text = "tony de marco & diego maldonado"
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Special" type="Label" parent="CreditsViewport/ParallaxBackground/ParallaxLayer/Credits/Categories" index="16"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 476.0
+margin_right = 1012.0
+margin_bottom = 512.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+text = "special thanks to"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Focus", "Theme", "custom_colors", "custom_fonts" ]
+
+[node name="Thanks" type="Label" parent="CreditsViewport/ParallaxBackground/ParallaxLayer/Credits/Categories" index="17"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 520.0
+margin_right = 1012.0
+margin_bottom = 617.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "rebeca \"kaleva\" araujo
+william \"tumeo\" tumeo
+laurence bannister
+
+and all godot engine community"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[connection signal="back" from="CreditsViewport/ParallaxBackground" to="." method="change_scene"]
+
+

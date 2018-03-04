@@ -1,0 +1,1492 @@
+[gd_scene load_steps=34 format=2]
+
+[ext_resource path="res://screens/basic_screen.tscn" type="PackedScene" id=1]
+[ext_resource path="res://screens/tutorial_screen/tutorial_screen.gd" type="Script" id=2]
+[ext_resource path="res://levels/tilesets/blue_land.png" type="Texture" id=3]
+[ext_resource path="res://levels/tilesets/tree_01.png" type="Texture" id=4]
+[ext_resource path="res://levels/tilesets/foliage_08.png" type="Texture" id=5]
+[ext_resource path="res://levels/tilesets/foliage_00.png" type="Texture" id=6]
+[ext_resource path="res://levels/tilesets/rock_00.png" type="Texture" id=7]
+[ext_resource path="res://levels/tilesets/foliage_01.png" type="Texture" id=8]
+[ext_resource path="res://levels/tilesets/tileset.tres" type="TileSet" id=9]
+[ext_resource path="res://actors/player/bard/sprite_sheet.png" type="Texture" id=10]
+[ext_resource path="res://screens/tutorial_screen/helper.tscn" type="PackedScene" id=11]
+[ext_resource path="res://screens/tutorial_screen/helper.gd" type="Script" id=12]
+[ext_resource path="res://screens/tutorial_screen/hat.png" type="Texture" id=13]
+[ext_resource path="res://screens/tutorial_screen/flute.png" type="Texture" id=14]
+[ext_resource path="res://screens/tutorial_screen/flute.gd" type="Script" id=15]
+[ext_resource path="res://actors/birds/piccolo_c5.tres" type="AudioStream" id=16]
+[ext_resource path="res://screens/tutorial_screen/z_key.png" type="Texture" id=17]
+[ext_resource path="res://screens/tutorial_screen/z_key_pressed.png" type="Texture" id=18]
+[ext_resource path="res://screens/tutorial_screen/x_key.png" type="Texture" id=19]
+[ext_resource path="res://screens/tutorial_screen/x_key_pressed.png" type="Texture" id=20]
+[ext_resource path="res://screens/tutorial_screen/c_key.png" type="Texture" id=21]
+[ext_resource path="res://screens/tutorial_screen/c_key_pressed.png" type="Texture" id=22]
+[ext_resource path="res://actors/birds/bird.tscn" type="PackedScene" id=23]
+
+[sub_resource type="Animation" id=1]
+
+resource_name = "tutorial_01"
+length = 2.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Dialogue/Label:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Dialogue/Button:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ "skip", "next" ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Dialogue/Label:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "heyo, this fox over there is rowan. he is now on his journey to become a bard." ]
+}
+
+[sub_resource type="Animation" id=2]
+
+resource_name = "tutorial_02"
+length = 4.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Dialogue/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "he even has a bard hat. but he lacks the skills" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Dialogue/Label:percent_visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Dialogue/Button:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 3.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ "skip", "next" ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Bard/Body/Head:region_rect")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 2.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ Rect2( 175, 169, 78, 88 ), Rect2( 6, 4, 86, 86 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Helper:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 1, 2, 3, 4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -73, 367 ), Vector2( 310, 370 ), Vector2( 310, 370 ), Vector2( -73, 367 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Helper/Arm/OKHand:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 1, 2, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ -14.0, -30.8018, 0.401024 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Helper/Arm/OKHand/hat:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 2.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=3]
+
+resource_name = "tutorial_03"
+length = 2.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Dialogue/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "he plays a piccolo, a small flute. it is easy bring a piccolo with him anywhere he goes" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Dialogue/Label:percent_visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Dialogue/Button:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ "skip", "next" ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Flute:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 0.25, 1 ),
+"update": 0,
+"values": [ Vector2( 1154, 316 ), Vector2( 560, 316 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+
+resource_name = "tutorial_04"
+length = 2.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Dialogue/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "to play a piccolo is very easy. this one in particular is a C5 piccolo with three pitches" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Dialogue/Label:percent_visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Dialogue/Button:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ "skip", "next" ]
+}
+
+[sub_resource type="Animation" id=5]
+
+resource_name = "tutorial_05"
+length = 9.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Dialogue/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "it gets more trembly going to its bottom, and more bassy going to its top" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Dialogue/Label:percent_visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Dialogue/Button:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 8.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ "skip", "next" ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Flute/Keys:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 2 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Helper_2:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 2, 3, 4, 5, 6, 7, 8, 9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 933, 750 ), Vector2( 593, 402 ), Vector2( 593, 402 ), Vector2( 663.5, 402 ), Vector2( 663.5, 402 ), Vector2( 739, 402 ), Vector2( 739, 402 ), Vector2( 933, 750 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Helper_2:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 2, 4.1, 6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ -126.071, -126.071, -126.071 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Flute/Keys/Z:pressed")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 2, 3, 4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Flute/Keys/X:pressed")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 2, 4, 5, 6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, false, true, false ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Flute/Keys/C:pressed")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 2, 6, 7, 8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, false, true, false ]
+}
+tracks/9/type = "method"
+tracks/9/path = NodePath("Flute")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 3, 5, 7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"values": [ {
+"args": [ 0 ],
+"method": "play_flute"
+}, {
+"args": [ 1 ],
+"method": "play_flute"
+}, {
+"args": [ 2 ],
+"method": "play_flute"
+} ]
+}
+tracks/10/type = "method"
+tracks/10/path = NodePath("Flute/SFX")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 4, 6, 8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "stop"
+}, {
+"args": [  ],
+"method": "stop"
+}, {
+"args": [  ],
+"method": "stop"
+} ]
+}
+
+[sub_resource type="Animation" id=6]
+
+resource_name = "tutorial_06"
+length = 2.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Dialogue/Label:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Dialogue/Label:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "go ahead, try for your self, make some sounds" ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Dialogue/Button:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ "skip", "next" ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("Flute")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 1.9 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ true ],
+"method": "set_process"
+} ]
+}
+
+[sub_resource type="Animation" id=7]
+
+resource_name = "tutorial_07"
+length = 10.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Dialogue/Label:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Dialogue/Label:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "here rowan, pick your piccolo, go chase your dream." ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Dialogue/Button:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 5.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ "skip", "next" ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Helper_3:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 2, 3, 4, 5, 6, 7, 9, 9.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 566, -40 ), Vector2( 566, 331 ), Vector2( 552, 301 ), Vector2( 566, 331 ), Vector2( 525, 468 ), Vector2( 524.916, 321.034 ), Vector2( 524.916, 321.034 ), Vector2( 524.916, -82.9656 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Helper_3/Arm/OKHand/thumb:rotation_degrees")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 3, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 119.841, 63.2491 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Helper_3/Arm/OKHand/index:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 3, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 33.1281, 64.7185 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Flute/Keys:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Flute:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 3, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.234375, 0.234375 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Helper_3/Arm:rotation_degrees")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 4, 5, 6, 7, 8, 8.5, 9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 18.5305, 18.5305, 0.0, 0.0, -16.5157, 0.0 ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Flute:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 5, 6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Bard/Body/Arm_L/Flute:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 5, 6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Bard/Body/Head:rotation_degrees")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 4.7, 5, 9.7, 10 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, -18.6984, -18.6984, 0.0 ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Bard/Body/Arm_L:rotation_degrees")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 5, 6, 6.5, 7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ -23.8685, -136.966, -136.966, -26.5467 ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("Bard/Body/Head:region_rect")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 4, 8.6, 9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 7, 0, 85, 94 ), Rect2( 11, 107, 80, 84 ), Rect2( 7, 0, 85, 94 ) ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("Helper_3/Arm/OKHand:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0, 8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("Helper_3/Arm/PositiveHand:visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0, 8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("Flute:position")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 4, 5, 6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 560, 316 ), Vector2( 430, 330 ), Vector2( 390, 450 ) ]
+}
+tracks/17/type = "method"
+tracks/17/path = NodePath("Flute")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ false ],
+"method": "set_process"
+} ]
+}
+
+[sub_resource type="Animation" id=8]
+
+resource_name = "tutorial_08"
+length = 7.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Dialogue/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "to help rowan learn the basics of music, you together with these birds will guide him" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Dialogue/Label:percent_visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Dialogue/Button:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 5.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ "skip", "next" ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Birb:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 1, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -30, -60 ), Vector2( 140, 410 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Birb/Sprite:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.8, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 3, 3, 0, 3 ]
+}
+tracks/5/type = "method"
+tracks/5/path = NodePath("Birb")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 3 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "sing"
+} ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Birb_2:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 3, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1090, -30 ), Vector2( 690, 510 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Birb_2/Sprite:frame")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 2.9, 3, 4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 7, 4, 7 ]
+}
+tracks/8/type = "method"
+tracks/8/path = NodePath("Birb_2")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 4.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "sing"
+} ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Birb_3:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 4, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 880, -50 ), Vector2( 920, 510 ) ]
+}
+tracks/10/type = "method"
+tracks/10/path = NodePath("Birb_3")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 5.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "sing"
+} ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Birb_3/Sprite:frame")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 4, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 8, 11 ]
+}
+
+[sub_resource type="Animation" id=9]
+
+resource_name = "tutorial_09"
+length = 4.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Dialogue/Label:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Dialogue/Label:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "now go ahead and help him learn some music!" ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Dialogue/Button:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ "skip", "finish" ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Helper_4:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 2, 2.3, 3, 3.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -130, 340 ), Vector2( 240, 340 ), Vector2( 210, 340 ), Vector2( 210, 340 ), Vector2( -130, 340 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Bard/Body/Head:rotation_degrees")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 1.9, 2.1, 2.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ -2.97203e-05, 17.5323, -2.97203e-05 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Bard/Body/Head:region_rect")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 2.1, 2.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 5, 3, 87, 87 ), Rect2( 99, 104, 81, 85 ), Rect2( 5, 3, 87, 87 ) ]
+}
+
+[sub_resource type="GDScript" id=10]
+
+script/source = "extends Panel
+onready var t = $Tween
+func start():
+	t.interpolate_property(self, \"rect_position\", get_position(), Vector2(190, 45),
+		1.0, Tween.TRANS_ELASTIC, Tween.EASE_OUT)
+	t.interpolate_property(self, \"rect_size\", get_size(), Vector2(651, 110),
+		1.0, Tween.TRANS_ELASTIC, Tween.EASE_OUT)
+	t.start()
+	yield(t, \"tween_completed\")
+	$\"../Animator\".play(\"tutorial_01\")
+	$Button.show()
+	$Button.grab_focus()"
+
+[node name="Tutorial" index="0" instance=ExtResource( 1 )]
+
+script = ExtResource( 2 )
+next_scene = "res://levels/level_01/level_01.tscn"
+
+[node name="Animator" parent="." index="0"]
+
+anims/tutorial_01 = SubResource( 1 )
+anims/tutorial_02 = SubResource( 2 )
+anims/tutorial_03 = SubResource( 3 )
+anims/tutorial_04 = SubResource( 4 )
+anims/tutorial_05 = SubResource( 5 )
+anims/tutorial_06 = SubResource( 6 )
+anims/tutorial_07 = SubResource( 7 )
+anims/tutorial_08 = SubResource( 8 )
+anims/tutorial_09 = SubResource( 9 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." index="2"]
+
+layer = -1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+scroll_offset = Vector2( 0, 0 )
+scroll_base_offset = Vector2( 0, 0 )
+scroll_base_scale = Vector2( 1, 1 )
+scroll_limit_begin = Vector2( 0, 0 )
+scroll_limit_end = Vector2( 0, 0 )
+scroll_ignore_camera_zoom = false
+
+[node name="Environment" type="ParallaxLayer" parent="ParallaxBackground" index="0"]
+
+editor/display_folded = true
+position = Vector2( 0, -72 )
+motion_scale = Vector2( 1, 1 )
+motion_offset = Vector2( 0, 0 )
+motion_mirroring = Vector2( 1024, 0 )
+_sections_unfolded = [ "Motion" ]
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="background" type="Sprite" parent="ParallaxBackground/Environment" index="0"]
+
+self_modulate = Color( 0.925781, 0.925781, 0.925781, 1 )
+position = Vector2( 0, -280 )
+z_index = -10
+texture = ExtResource( 3 )
+centered = false
+_sections_unfolded = [ "Offset", "Transform", "Visibility", "Z Index" ]
+
+[node name="tree_01" type="Sprite" parent="ParallaxBackground/Environment" index="1"]
+
+position = Vector2( 1720, 367 )
+texture = ExtResource( 4 )
+
+[node name="tree_02" type="Sprite" parent="ParallaxBackground/Environment" index="2"]
+
+position = Vector2( 10, 352 )
+texture = ExtResource( 4 )
+
+[node name="tree_03" type="Sprite" parent="ParallaxBackground/Environment" index="3"]
+
+self_modulate = Color( 0.871094, 0.871094, 0.871094, 1 )
+position = Vector2( 130, 380 )
+scale = Vector2( 0.820313, 0.820313 )
+z_index = -1
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Visibility", "Z Index" ]
+
+[node name="tree_04" type="Sprite" parent="ParallaxBackground/Environment" index="4"]
+
+self_modulate = Color( 0.824219, 0.824219, 0.824219, 1 )
+position = Vector2( 770, 453 )
+scale = Vector2( 0.664063, 0.664063 )
+z_index = -1
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Visibility", "Z Index" ]
+
+[node name="foliage_08" type="Sprite" parent="ParallaxBackground/Environment" index="5"]
+
+position = Vector2( 80, 480 )
+texture = ExtResource( 5 )
+
+[node name="foliage_00" type="Sprite" parent="ParallaxBackground/Environment" index="6"]
+
+position = Vector2( 240, 572 )
+scale = Vector2( 0.625, 0.625 )
+texture = ExtResource( 6 )
+
+[node name="rock_00" type="Sprite" parent="ParallaxBackground/Environment" index="7"]
+
+position = Vector2( 1420, 480 )
+texture = ExtResource( 7 )
+
+[node name="foliage_09" type="Sprite" parent="ParallaxBackground/Environment" index="8"]
+
+position = Vector2( 1600, 480 )
+texture = ExtResource( 5 )
+
+[node name="foliage_01" type="Sprite" parent="ParallaxBackground/Environment" index="9"]
+
+position = Vector2( 1330, 560 )
+scale = Vector2( 0.625, 0.625 )
+texture = ExtResource( 8 )
+_sections_unfolded = [ "Z Index" ]
+
+[node name="TileMap" type="TileMap" parent="ParallaxBackground/Environment" index="10"]
+
+position = Vector2( 0, -32 )
+mode = 0
+tile_set = ExtResource( 9 )
+cell_size = Vector2( 128, 128 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 327680, 2, 0, 327681, 2, 0, 327682, 2, 0, 327683, 2, 0, 327684, 2, 0, 327685, 2, 0, 327686, 2, 0, 327687, 2, 0, 327688, 2, 0, 327689, 2, 0, 327690, 2, 0, 327691, 2, 0, 327692, 2, 0, 327693, 2, 0, 327694, 2, 0, 393216, 3, 0, 393217, 3, 0, 393218, 3, 0, 393219, 3, 0, 393220, 3, 0, 393221, 3, 0, 393222, 3, 0, 393223, 3, 0, 393224, 3, 0, 393225, 3, 0, 393226, 3, 0, 393227, 3, 0, 393228, 3, 0, 393229, 3, 0, 393230, 3, 0 )
+_sections_unfolded = [ "Cell", "Transform" ]
+
+[node name="Bard" type="Node2D" parent="." index="3"]
+
+position = Vector2( 345.5, 537.5 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Body" type="Sprite" parent="Bard" index="0"]
+
+position = Vector2( 0, -28 )
+rotation = -0.00526074
+texture = ExtResource( 10 )
+offset = Vector2( 0, -28 )
+region_enabled = true
+region_rect = Rect2( 201, 98, 48, 70 )
+_sections_unfolded = [ "Region", "Transform" ]
+
+[node name="Head" type="Sprite" parent="Bard/Body" index="0"]
+
+show_behind_parent = true
+position = Vector2( -9.0315, -56.9999 )
+rotation = -5.18717e-07
+z_index = -1
+texture = ExtResource( 10 )
+offset = Vector2( -2.86514, -35.2269 )
+region_enabled = true
+region_rect = Rect2( 175, 169, 78, 88 )
+_sections_unfolded = [ "Region", "Transform", "Visibility", "Z Index" ]
+
+[node name="Arm_L" type="Sprite" parent="Bard/Body" index="1"]
+
+position = Vector2( 13.5, -44 )
+rotation = -0.416584
+z_index = -2
+texture = ExtResource( 10 )
+offset = Vector2( 0, 18 )
+region_enabled = true
+region_rect = Rect2( 134, 204, 20, 47 )
+_sections_unfolded = [ "Region", "Transform", "Z Index" ]
+
+[node name="Flute" type="Sprite" parent="Bard/Body/Arm_L" index="0"]
+
+visible = false
+position = Vector2( -0.0829277, 31.6508 )
+rotation = 1.44688
+texture = ExtResource( 10 )
+offset = Vector2( -2, -32 )
+region_enabled = true
+region_rect = Rect2( 217, 6, 12, 69 )
+_sections_unfolded = [ "Region", "Visibility", "Z Index" ]
+
+[node name="Arm_R" type="Sprite" parent="Bard/Body" index="2"]
+
+position = Vector2( -14, -46.5 )
+rotation = 0.362102
+texture = ExtResource( 10 )
+offset = Vector2( 0, 20 )
+region_enabled = true
+region_rect = Rect2( 108, 204, 20, 47 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Tail" type="Sprite" parent="Bard/Body" index="3"]
+
+position = Vector2( -10, -12 )
+z_index = -2
+texture = ExtResource( 10 )
+offset = Vector2( -28, -4 )
+region_enabled = true
+region_rect = Rect2( 6, 204, 58, 49 )
+_sections_unfolded = [ "Offset", "Z Index" ]
+
+[node name="Leg_L" type="Sprite" parent="Bard" index="1"]
+
+position = Vector2( 12, -40 )
+z_index = -1
+texture = ExtResource( 10 )
+offset = Vector2( 0, 18 )
+region_enabled = true
+region_rect = Rect2( 134, 205, 20, 47 )
+_sections_unfolded = [ "Region", "Z Index" ]
+
+[node name="Leg_R" type="Sprite" parent="Bard" index="2"]
+
+position = Vector2( -10, -42 )
+z_index = -1
+texture = ExtResource( 10 )
+offset = Vector2( 0, 20 )
+region_enabled = true
+region_rect = Rect2( 108, 204, 20, 47 )
+_sections_unfolded = [ "Region", "Z Index" ]
+
+[node name="Helper" parent="." index="4" instance=ExtResource( 11 )]
+
+editor/display_folded = true
+position = Vector2( -73, 367 )
+scale = Vector2( 1.5, 1.5 )
+script = ExtResource( 12 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="OKHand" parent="Helper/Arm" index="0"]
+
+rotation = -0.244346
+_sections_unfolded = [ "Transform" ]
+
+[node name="hat" type="Sprite" parent="Helper/Arm/OKHand" index="2"]
+
+position = Vector2( 71.1724, 15.8161 )
+scale = Vector2( 1.10345, 1.10345 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="Helper_2" parent="." index="5" instance=ExtResource( 11 )]
+
+editor/display_folded = true
+position = Vector2( 899, 715.2 )
+rotation = -2.20035
+scale = Vector2( 1.5, 1.5 )
+z_index = 1
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="OKHand" parent="Helper_2/Arm" index="0"]
+
+visible = false
+rotation = -0.244346
+_sections_unfolded = [ "Transform" ]
+
+[node name="PointingHand" parent="Helper_2/Arm" index="2"]
+
+visible = true
+position = Vector2( 233.925, 4.65527 )
+offset = Vector2( -19.5252, -73.3886 )
+flip_h = false
+
+[node name="Helper_3" parent="." index="6" instance=ExtResource( 11 )]
+
+editor/display_folded = true
+position = Vector2( 566, -40 )
+rotation = -4.72935
+scale = Vector2( 1.5, 1.5 )
+z_index = 1
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="OKHand" parent="Helper_3/Arm" index="0"]
+
+rotation = -0.244346
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="thumb" parent="Helper_3/Arm/OKHand" index="0"]
+
+rotation = 2.09162
+
+[node name="index" parent="Helper_3/Arm/OKHand" index="1"]
+
+rotation = 0.578194
+
+[node name="PositiveHand" parent="Helper_3/Arm" index="1"]
+
+_sections_unfolded = [ "Offset", "Region", "Transform", "Visibility" ]
+
+[node name="PointingHand" parent="Helper_3/Arm" index="2"]
+
+position = Vector2( 233.925, 4.65527 )
+offset = Vector2( -19.5252, -73.3886 )
+flip_h = false
+
+[node name="Helper_4" parent="." index="7" instance=ExtResource( 11 )]
+
+editor/display_folded = true
+position = Vector2( -130, 340 )
+scale = Vector2( 1.5, 1.5 )
+z_index = 5
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="OKHand" parent="Helper_4/Arm" index="0"]
+
+visible = false
+rotation = -0.244346
+_sections_unfolded = [ "Transform" ]
+
+[node name="PointingHand" parent="Helper_4/Arm" index="2"]
+
+visible = true
+position = Vector2( 228.667, -0.93335 )
+offset = Vector2( 23.9531, -79.365 )
+
+[node name="Dialogue" type="Panel" parent="." index="8"]
+
+editor/display_folded = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 496.0
+margin_top = 25.0
+margin_right = 496.0
+margin_bottom = 135.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = SubResource( 10 )
+_sections_unfolded = [ "Rect" ]
+
+[node name="Tween" type="Tween" parent="Dialogue" index="0"]
+
+repeat = false
+playback_process_mode = 1
+playback_speed = 1.0
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
+
+[node name="Label" type="Label" parent="Dialogue" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 17.0
+margin_top = 9.0
+margin_right = 639.0
+margin_bottom = 101.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "heyo, this fox over there is rowan. he is now on his journey to become a bard."
+align = 1
+valign = 1
+autowrap = true
+percent_visible = 0.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Button" type="Button" parent="Dialogue" index="2"]
+
+visible = false
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -135.0
+margin_top = 13.0
+margin_bottom = 51.0
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "skip"
+flat = false
+align = 1
+
+[node name="Flute" type="Sprite" parent="." index="9"]
+
+position = Vector2( 1154, 316 )
+texture = ExtResource( 14 )
+flip_h = true
+script = ExtResource( 15 )
+_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
+
+[node name="SFX" type="AudioStreamPlayer2D" parent="Flute" index="0"]
+
+stream = ExtResource( 16 )
+volume_db = 0.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Birbs"
+area_mask = 1
+
+[node name="Keys" type="HBoxContainer" parent="Flute" index="1"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -122.0
+margin_top = 13.0
+margin_right = 124.0
+margin_bottom = 77.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+_sections_unfolded = [ "Visibility" ]
+
+[node name="Z" type="TextureButton" parent="Flute/Keys" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 64.0
+margin_bottom = 64.0
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = true
+action_mode = 0
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 17 )
+texture_pressed = ExtResource( 18 )
+_sections_unfolded = [ "Textures" ]
+
+[node name="X" type="TextureButton" parent="Flute/Keys" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 68.0
+margin_right = 132.0
+margin_bottom = 64.0
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = true
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 19 )
+texture_pressed = ExtResource( 20 )
+_sections_unfolded = [ "Textures" ]
+
+[node name="C" type="TextureButton" parent="Flute/Keys" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 136.0
+margin_right = 200.0
+margin_bottom = 64.0
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = true
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 21 )
+texture_pressed = ExtResource( 22 )
+_sections_unfolded = [ "Textures" ]
+
+[node name="Birb" parent="." index="10" instance=ExtResource( 23 )]
+
+editor/display_folded = true
+position = Vector2( -30, -60 )
+z_index = 3
+_sections_unfolded = [ "Collision", "Transform", "Z Index" ]
+duration = 0.5
+flip_h = true
+
+[node name="Sprite" parent="Birb" index="1"]
+
+scale = Vector2( -0.5, 0.5 )
+
+[node name="Birb_2" parent="." index="11" instance=ExtResource( 23 )]
+
+editor/display_folded = true
+position = Vector2( 1090, -30 )
+z_index = 3
+_sections_unfolded = [ "Collision", "Transform", "Z Index" ]
+duration = 0.5
+sprite_row = 1
+
+[node name="Sprite" parent="Birb_2" index="1"]
+
+frame = 7
+
+[node name="Birb_3" parent="." index="12" instance=ExtResource( 23 )]
+
+editor/display_folded = true
+position = Vector2( 880, -50 )
+z_index = 3
+_sections_unfolded = [ "Collision", "Transform", "Z Index" ]
+duration = 0.5
+sprite_row = 2
+
+[node name="Sprite" parent="Birb_3" index="1"]
+
+frame = 11
+
+[connection signal="transition_finished" from="." to="Dialogue" method="start"]
+
+[connection signal="button_up" from="Dialogue/Button" to="." method="_on_next_up"]
+
+
+[editable path="Helper"]
+[editable path="Helper_2"]
+[editable path="Helper_3"]
+[editable path="Helper_4"]
+[editable path="Birb"]
+[editable path="Birb_2"]
+[editable path="Birb_3"]

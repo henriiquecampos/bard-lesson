@@ -1,0 +1,232 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://screens/basic_screen.tscn" type="PackedScene" id=1]
+[ext_resource path="res://screens/main_screen/main_screen.gd" type="Script" id=2]
+[ext_resource path="res://levels/tilesets/tree_01.png" type="Texture" id=3]
+[ext_resource path="res://levels/tilesets/foliage_08.png" type="Texture" id=4]
+[ext_resource path="res://levels/tilesets/foliage_00.png" type="Texture" id=5]
+[ext_resource path="res://levels/tilesets/rock_00.png" type="Texture" id=6]
+[ext_resource path="res://levels/tilesets/foliage_01.png" type="Texture" id=7]
+[ext_resource path="res://screens/main_screen/title.png" type="Texture" id=8]
+[ext_resource path="res://screens/main_screen/notes.png" type="Texture" id=9]
+[ext_resource path="res://actors/birds/bird.tscn" type="PackedScene" id=10]
+[ext_resource path="res://screens/main_screen/timer.gd" type="Script" id=11]
+[ext_resource path="res://levels/tilesets/blue_land.png" type="Texture" id=12]
+
+[sub_resource type="GDScript" id=1]
+
+script/source = "extends ParallaxBackground
+
+
+func _process(delta):
+	$Layer01.motion_offset.x -= 30 * delta"
+
+[node name="MainScreen" instance=ExtResource( 1 )]
+
+script = ExtResource( 2 )
+next_scene = "res://screens/tutorial_screen/tutorial_screen.tscn"
+
+[node name="Environment" type="Node2D" parent="." index="2"]
+
+editor/display_folded = true
+
+[node name="tree_01" type="Sprite" parent="Environment" index="0"]
+
+position = Vector2( 1030, 350 )
+texture = ExtResource( 3 )
+
+[node name="tree_02" type="Sprite" parent="Environment" index="1"]
+
+position = Vector2( 10, 350 )
+texture = ExtResource( 3 )
+
+[node name="tree_03" type="Sprite" parent="Environment" index="2"]
+
+self_modulate = Color( 0.871094, 0.871094, 0.871094, 1 )
+position = Vector2( 130, 380 )
+scale = Vector2( 0.820313, 0.820313 )
+z_index = -1
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Visibility", "Z Index" ]
+
+[node name="tree_04" type="Sprite" parent="Environment" index="3"]
+
+self_modulate = Color( 0.824219, 0.824219, 0.824219, 1 )
+position = Vector2( 770, 430 )
+scale = Vector2( 0.664063, 0.664063 )
+z_index = -1
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Visibility", "Z Index" ]
+
+[node name="foliage_08" type="Sprite" parent="Environment" index="4"]
+
+position = Vector2( 80, 480 )
+texture = ExtResource( 4 )
+
+[node name="foliage_00" type="Sprite" parent="Environment" index="5"]
+
+position = Vector2( 240, 560 )
+scale = Vector2( 0.625, 0.625 )
+texture = ExtResource( 5 )
+
+[node name="rock_00" type="Sprite" parent="Environment" index="6"]
+
+position = Vector2( 730, 480 )
+texture = ExtResource( 6 )
+
+[node name="foliage_09" type="Sprite" parent="Environment" index="7"]
+
+position = Vector2( 910, 480 )
+texture = ExtResource( 4 )
+
+[node name="foliage_01" type="Sprite" parent="Environment" index="8"]
+
+position = Vector2( 640, 560 )
+scale = Vector2( 0.625, 0.625 )
+texture = ExtResource( 7 )
+
+[node name="title" type="Sprite" parent="Environment" index="9"]
+
+position = Vector2( 500, 170 )
+scale = Vector2( 0.898438, 0.898438 )
+texture = ExtResource( 8 )
+
+[node name="notes" type="Sprite" parent="Environment" index="10"]
+
+position = Vector2( 492, 374 )
+scale = Vector2( 0.625, 0.625 )
+texture = ExtResource( 9 )
+
+[node name="Birbs" type="Node2D" parent="." index="3"]
+
+editor/display_folded = true
+
+[node name="Birb" parent="Birbs" index="0" instance=ExtResource( 10 )]
+
+position = Vector2( 956, 121 )
+
+[node name="SFX" parent="Birbs/Birb" index="4"]
+
+bus = "Master"
+
+[node name="Rest" type="Timer" parent="Birbs/Birb" index="5"]
+
+process_mode = 1
+wait_time = 8.0
+one_shot = false
+autostart = false
+script = ExtResource( 11 )
+
+[node name="Birb_2" parent="Birbs" index="1" instance=ExtResource( 10 )]
+
+position = Vector2( 136, 170 )
+sprite_row = 1
+flip_h = true
+
+[node name="Rest" type="Timer" parent="Birbs/Birb_2" index="5"]
+
+process_mode = 1
+wait_time = 8.0
+one_shot = false
+autostart = false
+script = ExtResource( 11 )
+
+[node name="Birb_3" parent="Birbs" index="2" instance=ExtResource( 10 )]
+
+position = Vector2( 738, 484 )
+sprite_row = 2
+
+[node name="Rest" type="Timer" parent="Birbs/Birb_3" index="5"]
+
+process_mode = 1
+wait_time = 8.0
+one_shot = false
+autostart = false
+script = ExtResource( 11 )
+
+[node name="Start" type="Button" parent="." index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 401.0
+margin_top = 463.0
+margin_right = 603.0
+margin_bottom = 507.0
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Start"
+flat = false
+align = 1
+
+[node name="Credits" type="Button" parent="." index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 401.0
+margin_top = 526.0
+margin_right = 603.0
+margin_bottom = 570.0
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Credits"
+flat = false
+align = 1
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." index="6"]
+
+layer = -1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+scroll_offset = Vector2( 0, 0 )
+scroll_base_offset = Vector2( 0, 0 )
+scroll_base_scale = Vector2( 1, 1 )
+scroll_limit_begin = Vector2( 0, 0 )
+scroll_limit_end = Vector2( 0, 0 )
+scroll_ignore_camera_zoom = false
+script = SubResource( 1 )
+_sections_unfolded = [ "Scroll" ]
+
+[node name="Layer01" type="ParallaxLayer" parent="ParallaxBackground" index="0"]
+
+motion_scale = Vector2( 1, 1 )
+motion_offset = Vector2( 0, 0 )
+motion_mirroring = Vector2( 1024, 0 )
+_sections_unfolded = [ "Motion" ]
+
+[node name="background" type="Sprite" parent="ParallaxBackground/Layer01" index="0"]
+
+self_modulate = Color( 0.925781, 0.925781, 0.925781, 1 )
+position = Vector2( 0, -280 )
+z_index = -10
+texture = ExtResource( 12 )
+centered = false
+_sections_unfolded = [ "Offset", "Transform", "Visibility", "Z Index" ]
+
+[connection signal="button_up" from="Start" to="." method="change_scene"]
+
+[connection signal="button_up" from="Credits" to="." method="change_scene" binds= [ "res://screens/credit_screen/credit_screen.tscn" ]]
+
+
+[editable path="Birbs/Birb"]

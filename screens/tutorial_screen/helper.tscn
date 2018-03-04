@@ -1,0 +1,115 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://screens/tutorial_screen/helper_sprites.png" type="Texture" id=1]
+
+[node name="Helper" type="Node2D"]
+
+[node name="Arm" type="Sprite" parent="." index="0"]
+
+position = Vector2( -300, 0 )
+texture = ExtResource( 1 )
+offset = Vector2( 118.004, 1.00541 )
+region_enabled = true
+region_rect = Rect2( 13, 20, 252, 43 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="OKHand" type="Node2D" parent="Arm" index="0"]
+
+position = Vector2( 247.5, 1 )
+scale = Vector2( 0.90625, 0.90625 )
+
+[node name="thumb" type="Sprite" parent="Arm/OKHand" index="0"]
+
+position = Vector2( -10.3965, -6.20687 )
+rotation = 1.3005
+texture = ExtResource( 1 )
+offset = Vector2( 41.5042, -27.4946 )
+flip_h = true
+region_enabled = true
+region_rect = Rect2( 13, 404, 97, 107 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="index" type="Sprite" parent="Arm/OKHand" index="1"]
+
+editor/display_folded = true
+position = Vector2( -8.99997, 5.49997 )
+rotation = 1.21588
+texture = ExtResource( 1 )
+offset = Vector2( -9.99578, -48.4946 )
+flip_h = true
+region_enabled = true
+region_rect = Rect2( 428, 385, 74, 123 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="pinky" type="Sprite" parent="Arm/OKHand/index" index="0"]
+
+show_behind_parent = true
+position = Vector2( -8.14398, -2.48492 )
+rotation = -1.43343
+texture = ExtResource( 1 )
+offset = Vector2( 1.7792, -48.7295 )
+flip_h = true
+region_enabled = true
+region_rect = Rect2( 198, 334, 25, 81 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="ring" type="Sprite" parent="Arm/OKHand/index" index="1"]
+
+show_behind_parent = true
+position = Vector2( -21.5665, -7.99271 )
+rotation = -0.945879
+texture = ExtResource( 1 )
+offset = Vector2( 1.7792, -48.7295 )
+flip_h = true
+region_enabled = true
+region_rect = Rect2( 240, 307, 27, 108 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="middle" type="Sprite" parent="Arm/OKHand/index" index="2"]
+
+show_behind_parent = true
+position = Vector2( -21.5665, -7.99271 )
+rotation = -0.489752
+texture = ExtResource( 1 )
+offset = Vector2( 1.7792, -48.7295 )
+flip_h = true
+region_enabled = true
+region_rect = Rect2( 287, 307, 33, 108 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="PositiveHand" type="Sprite" parent="Arm" index="1"]
+
+visible = false
+position = Vector2( 207.707, 0.577118 )
+rotation = 1.5708
+scale = Vector2( 0.87987, 0.87987 )
+texture = ExtResource( 1 )
+offset = Vector2( -22.25, -53.75 )
+flip_h = true
+region_enabled = true
+region_rect = Rect2( 341, 165, 154, 126 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="PointingHand" type="Sprite" parent="Arm" index="2"]
+
+visible = false
+position = Vector2( 235.25, 5.25 )
+rotation = 1.5708
+scale = Vector2( 0.87987, 0.87987 )
+texture = ExtResource( 1 )
+offset = Vector2( 20.7417, -70.1808 )
+flip_h = true
+region_enabled = true
+region_rect = Rect2( 10, 140, 142, 165 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="Tween" type="Tween" parent="." index="1"]
+
+repeat = false
+playback_process_mode = 1
+playback_speed = 1.0
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
+
+
