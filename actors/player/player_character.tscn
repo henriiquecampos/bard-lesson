@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://actors/basic_character.tscn" type="PackedScene" id=1]
+[ext_resource path="res://actors/player/player_character.gd" type="Script" id=2]
+
+[node name="PlayerCharacter" groups=[
+"players",
+] instance=ExtResource( 1 )]
+
+script = ExtResource( 2 )
+
+[node name="CameraRig" type="RemoteTransform2D" parent="." index="3"]
+
+remote_path = NodePath("")
+use_global_coordinates = true
+update_position = true
+update_rotation = true
+update_scale = true
+
+

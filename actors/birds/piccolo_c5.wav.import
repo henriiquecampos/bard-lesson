@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/piccolo_c5.wav-f25d3855bdd2daba628aaff9eb68df9e.sample"
+
+[deps]
+
+source_file="res://actors/birds/piccolo_c5.wav"
+source_md5="1cd884744d006754682160871dfa65ac"
+
+dest_files=[ "res://.import/piccolo_c5.wav-f25d3855bdd2daba628aaff9eb68df9e.sample" ]
+dest_md5="a75bee857ce19af03b188631c84dc7c5"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

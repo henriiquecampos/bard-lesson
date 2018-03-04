@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/flute_c4.wav-6d07fc8827657b576349c74ccf9b4c20.sample"
+
+[deps]
+
+source_file="res://actors/birds/flute_c4.wav"
+source_md5="13aaba4252143e53f8245d5df6728cc7"
+
+dest_files=[ "res://.import/flute_c4.wav-6d07fc8827657b576349c74ccf9b4c20.sample" ]
+dest_md5="bc3f96715340bbaa080b23281c79f910"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

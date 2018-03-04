@@ -1,0 +1,71 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://objects/pickup/pickup.tscn" type="PackedScene" id=1]
+[ext_resource path="res://actors/birds/bird.gd" type="Script" id=2]
+[ext_resource path="res://actors/birds/birbs.png" type="Texture" id=3]
+[ext_resource path="res://actors/birds/exclamation.png" type="Texture" id=4]
+[ext_resource path="res://actors/birds/piccolo_c5.tres" type="AudioStream" id=5]
+
+[sub_resource type="CircleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 160.0
+
+[node name="Birb" instance=ExtResource( 1 )]
+
+script = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+duration = 1.0
+sprite_row = 0
+flip_h = false
+
+[node name="Shape" parent="." index="0"]
+
+shape = SubResource( 1 )
+
+[node name="Sprite" parent="." index="1"]
+
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 3 )
+vframes = 4
+hframes = 4
+frame = 3
+_sections_unfolded = [ "Animation", "Transform" ]
+
+[node name="Exclamation" type="Sprite" parent="Sprite" index="0"]
+
+visible = false
+position = Vector2( -112, 0 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 4 )
+offset = Vector2( 0, -24 )
+
+[node name="Tween" type="Tween" parent="." index="2"]
+
+repeat = false
+playback_process_mode = 1
+playback_speed = 1.0
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
+
+[node name="Timer" type="Timer" parent="." index="3"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = true
+autostart = false
+
+[node name="SFX" type="AudioStreamPlayer2D" parent="." index="4"]
+
+stream = ExtResource( 5 )
+volume_db = 0.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Birbs"
+area_mask = 1
+
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+
+
