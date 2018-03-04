@@ -1,0 +1,334 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://levels/basic_level.tscn" type="PackedScene" id=1]
+[ext_resource path="res://levels/tilesets/tileset.tres" type="TileSet" id=2]
+[ext_resource path="res://actors/birds/bird.tscn" type="PackedScene" id=3]
+[ext_resource path="res://levels/tilesets/rock_00.png" type="Texture" id=4]
+[ext_resource path="res://levels/tilesets/tree_02.png" type="Texture" id=5]
+[ext_resource path="res://levels/tilesets/foliage_05.png" type="Texture" id=6]
+[ext_resource path="res://levels/tilesets/tree_01.png" type="Texture" id=7]
+[ext_resource path="res://levels/tilesets/foliage_08.png" type="Texture" id=8]
+[ext_resource path="res://levels/tilesets/foliage_00.png" type="Texture" id=9]
+[ext_resource path="res://levels/tilesets/foliage_04.png" type="Texture" id=10]
+[ext_resource path="res://levels/tilesets/foliage_01.png" type="Texture" id=11]
+[ext_resource path="res://levels/tilesets/blue_land.png" type="Texture" id=12]
+[ext_resource path="res://actors/player/bard/bard.tscn" type="PackedScene" id=13]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 56, 112 )
+
+[sub_resource type="LineShape2D" id=2]
+
+custom_solver_bias = 0.0
+normal = Vector2( 0, -1 )
+d = 0.0
+
+[node name="Level_03" instance=ExtResource( 1 )]
+
+[node name="Tilemap" parent="." index="0"]
+
+editor/display_folded = true
+
+[node name="TileMap" parent="Tilemap" index="0"]
+
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 128, 128 )
+tile_data = PoolIntArray( -917460, 6, 0, -851921, 6, 0, -720858, 19, 0, -720857, 19, 0, -720856, 19, 0, -720855, 19, 0, -720854, 19, 0, -720853, 19, 0, -720852, 19, 0, -720851, 19, 0, -720850, 19, 0, -720849, 19, 0, -720848, 19, 0, -720847, 19, 0, -720846, 19, 0, -720845, 19, 0, -720844, 19, 0, -655323, 6, 0, -589788, 6, 0, -524265, 19, 0, -524264, 19, 0, -524263, 19, 0, -524262, 19, 0, -524261, 19, 0, -524260, 19, 0, -524259, 19, 0, -524258, 19, 0, -524257, 19, 0, -524256, 19, 0, -524255, 19, 0, -524254, 19, 0, -524253, 19, 0, -458730, 6, 0, -393196, 6, 0, -262126, 6, 0, -131051, 6, 0, 17, 2, 0, 18, 2, 0, 19, 2, 0, 20, 2, 0, 21, 2, 0, 22, 2, 0, 23, 2, 0, 24, 2, 0, 25, 2, 0, 26, 2, 0, 27, 2, 0, 28, 2, 0, 29, 2, 0, 30, 2, 0, 31, 2, 0, 32, 2, 0, 65553, 3, 0, 65554, 3, 0, 65555, 3, 0, 65556, 3, 0, 65557, 3, 0, 65558, 3, 0, 65559, 3, 0, 65560, 3, 0, 65561, 3, 0, 65562, 3, 0, 65563, 3, 0, 65564, 3, 0, 65565, 3, 0, 65566, 3, 0, 65567, 3, 0, 65568, 3, 0, 65571, 6, 0, 131088, 6, 0, 131089, 3, 0, 131090, 3, 0, 131091, 3, 0, 131092, 3, 0, 131093, 3, 0, 131094, 3, 0, 131095, 3, 0, 131096, 3, 0, 131097, 3, 0, 131098, 3, 0, 131099, 3, 0, 131100, 3, 0, 131101, 3, 0, 131102, 3, 0, 131103, 3, 0, 131104, 3, 0, 131109, 6, 0, 196621, 6, 0, 196625, 3, 0, 196626, 3, 0, 196627, 3, 0, 196628, 3, 0, 196629, 3, 0, 196630, 3, 0, 196631, 3, 0, 196632, 3, 0, 196633, 3, 0, 196634, 3, 0, 196635, 3, 0, 196636, 3, 0, 196637, 3, 0, 196638, 3, 0, 196639, 3, 0, 196640, 3, 0, 196647, 6, 0, 262144, 2, 0, 262145, 2, 0, 262146, 2, 0, 262147, 2, 0, 262148, 2, 0, 262149, 2, 0, 262150, 2, 0, 262151, 2, 0, 262152, 2, 0, 262153, 2, 0, 262154, 2, 0, 262155, 2, 0, 262159, 6, 0, 262161, 3, 0, 262162, 3, 0, 262163, 3, 0, 262164, 3, 0, 262165, 3, 0, 262166, 3, 0, 262167, 3, 0, 262168, 3, 0, 262169, 3, 0, 262170, 3, 0, 262171, 3, 0, 262172, 3, 0, 262173, 3, 0, 262174, 3, 0, 262175, 3, 0, 262176, 3, 0, 327680, 3, 0, 327681, 3, 0, 327682, 3, 0, 327683, 3, 0, 327684, 3, 0, 327685, 3, 0, 327686, 3, 0, 327687, 3, 0, 327688, 3, 0, 327689, 3, 0, 327690, 3, 0, 327691, 3, 0, 327697, 3, 0, 327698, 3, 0, 327699, 3, 0, 327700, 3, 0, 327701, 3, 0, 327702, 3, 0, 327703, 3, 0, 327704, 3, 0, 327705, 3, 0, 327706, 3, 0, 327707, 3, 0, 327708, 3, 0, 327709, 3, 0, 327710, 3, 0, 327711, 3, 0, 327712, 3, 0, 327717, 6, 0, 393216, 3, 0, 393217, 3, 0, 393218, 3, 0, 393219, 3, 0, 393220, 3, 0, 393221, 3, 0, 393222, 3, 0, 393223, 3, 0, 393224, 3, 0, 393225, 3, 0, 393226, 3, 0, 393227, 3, 0, 393233, 3, 0, 393234, 3, 0, 393235, 3, 0, 393236, 3, 0, 393237, 3, 0, 393238, 3, 0, 393239, 3, 0, 393240, 3, 0, 393241, 3, 0, 393242, 3, 0, 393243, 3, 0, 393244, 3, 0, 393245, 3, 0, 393246, 3, 0, 393247, 3, 0, 393248, 3, 0, 458752, 3, 0, 458753, 3, 0, 458754, 3, 0, 458755, 3, 0, 458756, 3, 0, 458757, 3, 0, 458758, 3, 0, 458759, 3, 0, 458760, 3, 0, 458761, 3, 0, 458762, 3, 0, 458763, 3, 0, 458769, 3, 0, 458770, 3, 0, 458771, 3, 0, 458772, 3, 0, 458773, 3, 0, 458774, 3, 0, 458775, 3, 0, 458776, 3, 0, 458777, 3, 0, 458778, 3, 0, 458779, 3, 0, 458780, 3, 0, 458781, 3, 0, 458782, 3, 0, 458783, 3, 0, 458784, 3, 0, 458785, 2, 0, 458786, 2, 0, 458787, 2, 0, 458788, 2, 0, 458789, 2, 0, 458790, 2, 0, 458791, 2, 0, 458792, 2, 0, 458793, 2, 0, 458794, 2, 0, 458795, 2, 0, 524288, 3, 0, 524289, 3, 0, 524290, 3, 0, 524291, 3, 0, 524292, 3, 0, 524293, 3, 0, 524294, 3, 0, 524295, 3, 0, 524296, 3, 0, 524297, 3, 0, 524298, 3, 0, 524299, 3, 0, 524305, 3, 0, 524306, 3, 0, 524307, 3, 0, 524308, 3, 0, 524309, 3, 0, 524310, 3, 0, 524311, 3, 0, 524312, 3, 0, 524313, 3, 0, 524314, 3, 0, 524315, 3, 0, 524316, 3, 0, 524317, 3, 0, 524318, 3, 0, 524319, 3, 0, 524320, 3, 0, 524321, 3, 0, 524322, 3, 0, 524323, 3, 0, 524324, 3, 0, 524325, 3, 0, 524326, 3, 0, 524327, 3, 0, 524328, 3, 0, 524329, 3, 0, 524330, 3, 0, 524331, 3, 0, 589824, 3, 0, 589825, 3, 0, 589826, 3, 0, 589827, 3, 0, 589828, 3, 0, 589829, 3, 0, 589830, 3, 0, 589831, 3, 0, 589832, 3, 0, 589833, 3, 0, 589834, 3, 0, 589835, 3, 0, 589841, 3, 0, 589842, 3, 0, 589843, 3, 0, 589844, 3, 0, 589845, 3, 0, 589846, 3, 0, 589847, 3, 0, 589848, 3, 0, 589849, 3, 0, 589850, 3, 0, 589851, 3, 0, 589852, 3, 0, 589853, 3, 0, 589854, 3, 0, 589855, 3, 0, 589856, 3, 0, 589857, 3, 0, 589858, 3, 0, 589859, 3, 0, 589860, 3, 0, 589861, 3, 0, 589862, 3, 0, 589863, 3, 0, 589864, 3, 0, 589865, 3, 0, 589866, 3, 0, 589867, 3, 0 )
+_sections_unfolded = [ "Cell" ]
+
+[node name="Objectives" parent="." index="1"]
+
+editor/display_folded = true
+count_time = true
+
+[node name="Birb" parent="Objectives" index="0" instance=ExtResource( 3 )]
+
+position = Vector2( 2016, 480 )
+duration = 0.25
+sprite_row = 1
+
+[node name="Birb_2" parent="Objectives" index="1" instance=ExtResource( 3 )]
+
+position = Vector2( 3080, -40 )
+duration = 0.5
+
+[node name="Birb_3" parent="Objectives" index="2" instance=ExtResource( 3 )]
+
+position = Vector2( 4184, -32 )
+duration = 0.25
+sprite_row = 1
+
+[node name="Birb_4" parent="Objectives" index="3" instance=ExtResource( 3 )]
+
+position = Vector2( 4256, 760 )
+duration = 0.5
+sprite_row = 2
+flip_h = true
+
+[node name="Birb_5" parent="Objectives" index="4" instance=ExtResource( 3 )]
+
+position = Vector2( 5320, 816 )
+duration = 0.5
+sprite_row = 2
+
+[node name="Birb_6" parent="Objectives" index="5" instance=ExtResource( 3 )]
+
+position = Vector2( 3424, -1136 )
+duration = 0.5
+sprite_row = 1
+
+[node name="Birb_7" parent="Objectives" index="6" instance=ExtResource( 3 )]
+
+position = Vector2( 4528, -1200 )
+duration = 0.5
+flip_h = true
+
+[node name="Birb_8" parent="Objectives" index="7" instance=ExtResource( 3 )]
+
+position = Vector2( 896, 336 )
+duration = 0.25
+sprite_row = 2
+
+[node name="Birb_9" parent="Objectives" index="8" instance=ExtResource( 3 )]
+
+position = Vector2( 2344, -544 )
+duration = 0.25
+sprite_row = 1
+flip_h = true
+
+[node name="Birb_10" parent="Objectives" index="9" instance=ExtResource( 3 )]
+
+position = Vector2( 5456, -1939 )
+duration = 0.5
+flip_h = true
+
+[node name="Enviroment" parent="." index="2"]
+
+editor/display_folded = true
+
+[node name="rock_00" type="Sprite" parent="Enviroment" index="0"]
+
+position = Vector2( 104, 384 )
+texture = ExtResource( 4 )
+
+[node name="tree_02" type="Sprite" parent="Enviroment" index="1"]
+
+position = Vector2( 984, 256 )
+texture = ExtResource( 5 )
+
+[node name="foliage_05" type="Sprite" parent="Enviroment" index="2"]
+
+position = Vector2( 1968, 448 )
+z_index = -1
+texture = ExtResource( 6 )
+_sections_unfolded = [ "Z Index" ]
+
+[node name="tree_01" type="Sprite" parent="Enviroment" index="3"]
+
+position = Vector2( 2368, -251 )
+z_index = -1
+texture = ExtResource( 7 )
+_sections_unfolded = [ "Z Index" ]
+
+[node name="foliage_08" type="Sprite" parent="Enviroment" index="4"]
+
+position = Vector2( 3176, -120 )
+texture = ExtResource( 8 )
+
+[node name="foliage_06" type="Sprite" parent="Enviroment" index="5"]
+
+position = Vector2( 4000, -56 )
+texture = ExtResource( 6 )
+
+[node name="foliage_07" type="Sprite" parent="Enviroment" index="6"]
+
+position = Vector2( 4544, 64 )
+texture = ExtResource( 9 )
+
+[node name="tree_03" type="Sprite" parent="Enviroment" index="7"]
+
+position = Vector2( 4352, 640 )
+z_index = -1
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Z Index" ]
+
+[node name="rock_01" type="Sprite" parent="Enviroment" index="8"]
+
+position = Vector2( 5368, 768 )
+texture = ExtResource( 4 )
+
+[node name="foliage_04" type="Sprite" parent="Enviroment" index="9"]
+
+position = Vector2( 4800, 577 )
+texture = ExtResource( 10 )
+
+[node name="tree_04" type="Sprite" parent="Enviroment" index="10"]
+
+position = Vector2( 3600, -252 )
+texture = ExtResource( 7 )
+
+[node name="foliage_09" type="Sprite" parent="Enviroment" index="11"]
+
+position = Vector2( 3480, -1152 )
+texture = ExtResource( 8 )
+
+[node name="foliage_10" type="Sprite" parent="Enviroment" index="12"]
+
+position = Vector2( 2624, -832 )
+texture = ExtResource( 9 )
+
+[node name="tree_05" type="Sprite" parent="Enviroment" index="13"]
+
+position = Vector2( 3024, -1275 )
+texture = ExtResource( 7 )
+
+[node name="tree_06" type="Sprite" parent="Enviroment" index="14"]
+
+position = Vector2( 4448, -1274 )
+texture = ExtResource( 7 )
+
+[node name="foliage_11" type="Sprite" parent="Enviroment" index="15"]
+
+position = Vector2( 2752, -320 )
+texture = ExtResource( 10 )
+
+[node name="foliage_01" type="Sprite" parent="Enviroment" index="16"]
+
+position = Vector2( 3792, -1088 )
+texture = ExtResource( 11 )
+
+[node name="foliage_00" type="Sprite" parent="Enviroment" index="17"]
+
+position = Vector2( 4288, -1088 )
+texture = ExtResource( 9 )
+
+[node name="tree_07" type="Sprite" parent="Enviroment" index="18"]
+
+position = Vector2( 5456, -1662 )
+texture = ExtResource( 5 )
+
+[node name="foliage_02" type="Sprite" parent="Enviroment" index="19"]
+
+position = Vector2( 5016, -1536 )
+texture = ExtResource( 8 )
+
+[node name="foliage_03" type="Sprite" parent="Enviroment" index="20"]
+
+position = Vector2( 5872, -1472 )
+texture = ExtResource( 9 )
+
+[node name="foliage_12" type="Sprite" parent="Enviroment" index="21"]
+
+position = Vector2( 5696, -1856 )
+texture = ExtResource( 11 )
+
+[node name="foliage_13" type="Sprite" parent="Enviroment" index="22"]
+
+position = Vector2( 6288, -1536 )
+texture = ExtResource( 4 )
+
+[node name="Portal" parent="." index="3"]
+
+editor/display_folded = true
+position = Vector2( 6728, -1520 )
+
+[node name="Shape" parent="Portal" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="Camera2D" parent="." index="4"]
+
+position = Vector2( 288, 296 )
+limit_left = 0
+limit_top = -2213
+limit_right = 6784
+limit_bottom = 1280
+_sections_unfolded = [ "Drag Margin", "Editor", "Limit", "Smoothing", "Transform" ]
+
+[node name="GameScreen" parent="Screen" index="0"]
+
+next_scene = "res://screens/promo_screen/promo_screen.tscn"
+
+[node name="Boundaries" parent="." index="6"]
+
+editor/display_folded = true
+
+[node name="Left" parent="Boundaries" index="0"]
+
+position = Vector2( 0, 416 )
+
+[node name="Right" parent="Boundaries" index="1"]
+
+position = Vector2( 6783, -1396 )
+
+[node name="Void" parent="." index="7"]
+
+editor/display_folded = true
+position = Vector2( 1888, 1282 )
+
+[node name="Shape" parent="Void" index="0"]
+
+shape = SubResource( 2 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." index="8"]
+
+editor/display_folded = true
+layer = -1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+scroll_offset = Vector2( 0, 0 )
+scroll_base_offset = Vector2( 0, 0 )
+scroll_base_scale = Vector2( 0.7, 0.7 )
+scroll_limit_begin = Vector2( 0, 0 )
+scroll_limit_end = Vector2( 0, 0 )
+scroll_ignore_camera_zoom = false
+_sections_unfolded = [ "Scroll" ]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" index="0"]
+
+motion_scale = Vector2( 1, 1 )
+motion_offset = Vector2( 0, 0 )
+motion_mirroring = Vector2( 1024, 0 )
+_sections_unfolded = [ "Motion" ]
+
+[node name="Background" type="Sprite" parent="ParallaxBackground/ParallaxLayer" index="0"]
+
+position = Vector2( 0, -1344 )
+texture = ExtResource( 12 )
+centered = false
+_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
+
+[node name="ColorRect" type="ColorRect" parent="ParallaxBackground/ParallaxLayer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = -368.0
+margin_right = 1024.0
+margin_bottom = 1280.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0.768627, 0.929412, 0.941176, 1 )
+_sections_unfolded = [ "Rect" ]
+
+[node name="Player" parent="." index="9" instance=ExtResource( 13 )]
+
+editor/display_folded = true
+position = Vector2( 288, 296 )
+z_index = 2
+_sections_unfolded = [ "Z Index" ]
+
+[node name="CameraRig" parent="Player" index="4"]
+
+remote_path = NodePath("../../Camera2D")
+
+
+[editable path="Player"]
