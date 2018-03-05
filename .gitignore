@@ -6,3 +6,4 @@
 *.sample
 *.oggstr
 export_presets.cfg
+*.pck
