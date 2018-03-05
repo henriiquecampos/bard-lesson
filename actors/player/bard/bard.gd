@@ -39,6 +39,7 @@ func _process(delta):
 			if !check:
 				miss()
 				object.miss()
+
 	if Input.is_action_just_released("interact"):
 		can_move = true
 		if note == null:
