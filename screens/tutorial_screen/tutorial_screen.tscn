@@ -944,7 +944,7 @@ func start():
 	$Button.show()
 	$Button.grab_focus()"
 
-[node name="Tutorial" index="0" instance=ExtResource( 1 )]
+[node name="Tutorial" instance=ExtResource( 1 )]
 
 script = ExtResource( 2 )
 next_scene = "res://levels/level_01/level_01.tscn"

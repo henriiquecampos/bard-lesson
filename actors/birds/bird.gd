@@ -55,7 +55,6 @@ func _on_body_entered(body):
 	#object to interact with
 	if body.is_in_group("players"):
 		sing()
-		body.can_interact = true
 		body.object = self
 
 func _on_body_exited( body ):
@@ -65,7 +64,6 @@ func _on_body_exited( body ):
 	#Sets the current interact object to be null if players exits its
 	#area of interaction
 	if body.is_in_group("players"):
-		body.can_interact = false
 		body.object = null
 
 func set_flip_h(value):

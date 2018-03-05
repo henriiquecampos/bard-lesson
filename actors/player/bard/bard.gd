@@ -1,6 +1,5 @@
 extends "res://actors/player/player_character.gd"
 
-var can_interact = true
 var object = null
 const NOTE = preload("res://interface/note_duration/note.tscn")
 var note = null
@@ -15,7 +14,7 @@ func _ready():
 func _process(delta):
 	#Start the interaction if it can, then check for which pitch the 
 	#player is trying to use in the interaction
-	if Input.is_action_just_pressed("interact") and current_state != JUMP and can_interact:
+	if Input.is_action_just_pressed("interact") and current_state != JUMP:
 		can_move = false
 		$Animator.play("flute")
 		var pitch = 0.0
@@ -40,13 +39,14 @@ func _process(delta):
 			if !check:
 				miss()
 				object.miss()
-	if Input.is_action_just_released("interact") and can_interact:
+	if Input.is_action_just_released("interact"):
 		can_move = true
 		if note == null:
 			return
 		var pitch = key
 		var duration = note.duration
 		note.finished()
+		note = null
 			
 		if object != null:
 			if check_duration(duration, object.note_duration) and check:
@@ -56,6 +56,7 @@ func _process(delta):
 			elif check:
 				miss()
 				object.miss()
+				object = null
 		else:
 			resume()
 		
@@ -72,7 +73,6 @@ func resume():
 	#movement and interaction behaviors
 	$Animator.play("rest")
 	$Flute.stop()
-	can_interact = true
 	
 func miss():
 	#Plays a failing animation on both the player and the object he is
