@@ -8,9 +8,5 @@ func _on_next_up():
 			tutor_part += 1
 			$Animator.play($Animator.get_animation_list()[tutor_part])
 		else:
+			$Dialogue/Button.disabled = true
 			change_scene()
-#	if tutor_part < $Animator.get_animation_list().size() -1:
-#			tutor_part += 1
-#			$Animator.play($Animator.get_animation_list()[tutor_part])
-#	else:
-#		change_scene()
