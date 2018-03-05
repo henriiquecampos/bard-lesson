@@ -2,7 +2,7 @@
 
 [ext_resource path="res://screens/GaroaHackerClubeBold.otf" type="DynamicFontData" id=1]
 
-[sub_resource type="StyleBoxFlat" id=3]
+[sub_resource type="StyleBoxFlat" id=1]
 
 content_margin_left = -1.0
 content_margin_right = -1.0
@@ -31,7 +31,7 @@ anti_aliasing = true
 anti_aliasing_size = 1
 _sections_unfolded = [ "Border", "Border Width", "Corner Radius", "Shadow" ]
 
-[sub_resource type="StyleBoxFlat" id=1]
+[sub_resource type="StyleBoxFlat" id=2]
 
 content_margin_left = -1.0
 content_margin_right = -1.0
@@ -60,7 +60,7 @@ anti_aliasing = true
 anti_aliasing_size = 1
 _sections_unfolded = [ "Border", "Border Width", "Corner Radius", "Shadow" ]
 
-[sub_resource type="StyleBoxFlat" id=2]
+[sub_resource type="StyleBoxFlat" id=3]
 
 content_margin_left = -1.0
 content_margin_right = -1.0
@@ -136,12 +136,12 @@ Button/colors/font_color_hover = Color( 1, 1, 1, 1 )
 Button/colors/font_color_pressed = Color( 0.949219, 0.949219, 0.949219, 1 )
 Button/constants/hseparation = 2
 Button/fonts/font = null
-Button/styles/disabled = SubResource( 3 )
-Button/styles/focus = SubResource( 1 )
-Button/styles/hover = SubResource( 2 )
-Button/styles/normal = SubResource( 3 )
+Button/styles/disabled = SubResource( 1 )
+Button/styles/focus = SubResource( 2 )
+Button/styles/hover = SubResource( 3 )
+Button/styles/normal = SubResource( 1 )
 Button/styles/pressed = SubResource( 4 )
-Panel/styles/panel = SubResource( 3 )
+Panel/styles/panel = SubResource( 1 )
 Panel/styles/panelf = null
 Panel/styles/panelnc = null
 _sections_unfolded = [ "Button", "Button/colors", "Button/styles", "Panel", "Resource", "VScrollBar", "VScrollBar/icons", "VScrollBar/styles" ]
