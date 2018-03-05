@@ -1,5 +1,4 @@
 extends "res://actors/basic_character.gd"
-var can_move = true
 func _physics_process(delta):
 	if !can_move:
 		return

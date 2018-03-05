@@ -7,12 +7,15 @@ const JUMP_HEIGHT = -1400
 var velocity = Vector2()
 var can_jump = true
 var falling = false
+var can_move = true
 onready var init_scale = $Sprites.get_scale()
 
 enum STATES{IDLE, WALK, JUMP}
 var current_state = IDLE setget set_current_state, get_current_state
 
 func _physics_process(delta):
+	if !can_move:
+		return
 	velocity.y += GRAVITY
 	velocity = move_and_slide(velocity, UP)
 	

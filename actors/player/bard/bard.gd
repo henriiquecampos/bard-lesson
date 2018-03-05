@@ -40,11 +40,14 @@ func _process(delta):
 			if !check:
 				miss()
 				object.miss()
-	if Input.is_action_just_released("interact") and note != null and can_interact:
+	if Input.is_action_just_released("interact") and can_interact:
 		can_move = true
+		if note == null:
+			return
 		var pitch = key
 		var duration = note.duration
 		note.finished()
+			
 		if object != null:
 			if check_duration(duration, object.note_duration) and check:
 				success()
