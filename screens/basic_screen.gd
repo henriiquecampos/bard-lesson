@@ -5,7 +5,6 @@ signal transition_finished
 
 func _ready():
 	#Transition back everytime a screen is loaded
-	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	apply_transition(OUT)
 	
 func change_scene(to = next_scene):

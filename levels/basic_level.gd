@@ -4,7 +4,6 @@ onready var objectives = $Objectives.get_child_count()
 signal score_increased(amount)
 
 func _ready():
-	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	#Portal is the Node responsible for verifying if the player reached
 	#the end of the level
 	$Portal.connect("body_entered", self, "_portal_body_entered")
