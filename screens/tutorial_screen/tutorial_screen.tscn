@@ -948,7 +948,7 @@ use_filter = true
 font_data = ExtResource( 18 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
-[node name="Tutorial" index="0" instance=ExtResource( 1 )]
+[node name="Tutorial" instance=ExtResource( 1 )]
 
 script = ExtResource( 2 )
 next_scene = "res://levels/level_01/level_01.tscn"

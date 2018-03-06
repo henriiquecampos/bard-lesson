@@ -2,6 +2,7 @@ extends HBoxContainer
 const COLORS = [Color("bc5fd3"), Color("8d5fd3"), Color("37c871")]
 const DURATIONS = [preload("res://interface/note_duration/16.png"),
 preload("res://interface/note_duration/8.png"), preload("res://interface/note_duration/4.png")] 
+
 func add_note(pitch, duration):
 	var t = TextureRect.new()
 	if duration == 16:
