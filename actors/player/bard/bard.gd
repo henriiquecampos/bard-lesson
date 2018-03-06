@@ -28,6 +28,7 @@ func resume():
 	#movement and interaction behaviors
 	$Animator.play("rest")
 	$Flute.stop()
+	set_current_state(IDLE)
 	
 func miss():
 	#Plays a failing animation on both the player and the object he is
@@ -66,7 +67,7 @@ func _input(event):
 		if e.as_text() == event.as_text():
 			p = (InputMap.get_action_list("interact").find(e))
 
-	if event.is_action_pressed("interact") and current_state != JUMP:
+	if event.is_action_pressed("interact") and is_on_floor():
 		can_move = false
 		$Animator.play("flute")
 		interact(p)

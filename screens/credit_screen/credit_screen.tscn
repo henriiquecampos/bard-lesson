@@ -8,7 +8,7 @@
 [ext_resource path="res://screens/GaroaHackerClubeBold.otf" type="DynamicFontData" id=6]
 [ext_resource path="res://screens/credit_screen/credits_texture.tres" type="Texture" id=7]
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=1]
 
 size = 32
 use_mipmaps = true
@@ -26,11 +26,6 @@ next_scene = "res://screens/main_screen/main_screen.tscn"
 [node name="Transition" parent="." index="1"]
 
 layer = 2
-
-[node name="ColorRect" parent="Transition" index="0"]
-
-margin_left = -1280.0
-margin_right = -256.0
 
 [node name="Background" type="TextureRect" parent="." index="2"]
 
@@ -349,7 +344,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 1 )
 text = "audio"
 align = 1
 valign = 1
@@ -489,7 +484,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 1 )
 text = "design"
 align = 1
 valign = 1
@@ -748,7 +743,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 1 )
 text = "engineering"
 align = 1
 valign = 1
@@ -830,7 +825,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 1 )
 text = "graphics"
 align = 1
 valign = 1
@@ -1148,7 +1143,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 1 )
 text = "special thanks to"
 align = 1
 valign = 1
