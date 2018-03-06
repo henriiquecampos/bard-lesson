@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/c_key_pressed.png-a5bc9e3c34994af79a4dc4f300e39956.stex"
+path="res://.import/key_pressed.png-a5b8ced7ddea041e4412f5e66215acfd.stex"
 
 [deps]
 
-source_file="res://screens/tutorial_screen/c_key_pressed.png"
-source_md5="dac466c6c3633f416122021f03d2e5f1"
+source_file="res://screens/tutorial_screen/key_pressed.png"
+source_md5="7059f5a7c1683442a0748cce807a7707"
 
-dest_files=[ "res://.import/c_key_pressed.png-a5bc9e3c34994af79a4dc4f300e39956.stex" ]
-dest_md5="e3c241cc7b88d3762a215ec34bbc356a"
+dest_files=[ "res://.import/key_pressed.png-a5b8ced7ddea041e4412f5e66215acfd.stex" ]
+dest_md5="24de5253902482fead271220ddab9984"
 
 [params]
 

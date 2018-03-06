@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://screens/basic_screen.tscn" type="PackedScene" id=1]
 [ext_resource path="res://screens/tutorial_screen/tutorial_screen.gd" type="Script" id=2]
@@ -11,18 +11,14 @@
 [ext_resource path="res://levels/tilesets/tileset.tres" type="TileSet" id=9]
 [ext_resource path="res://actors/player/bard/sprite_sheet.png" type="Texture" id=10]
 [ext_resource path="res://screens/tutorial_screen/helper.tscn" type="PackedScene" id=11]
-[ext_resource path="res://screens/tutorial_screen/helper.gd" type="Script" id=12]
-[ext_resource path="res://screens/tutorial_screen/hat.png" type="Texture" id=13]
-[ext_resource path="res://screens/tutorial_screen/flute.png" type="Texture" id=14]
-[ext_resource path="res://screens/tutorial_screen/flute.gd" type="Script" id=15]
-[ext_resource path="res://actors/birds/piccolo_c5.tres" type="AudioStream" id=16]
-[ext_resource path="res://screens/tutorial_screen/z_key.png" type="Texture" id=17]
-[ext_resource path="res://screens/tutorial_screen/z_key_pressed.png" type="Texture" id=18]
-[ext_resource path="res://screens/tutorial_screen/x_key.png" type="Texture" id=19]
-[ext_resource path="res://screens/tutorial_screen/x_key_pressed.png" type="Texture" id=20]
-[ext_resource path="res://screens/tutorial_screen/c_key.png" type="Texture" id=21]
-[ext_resource path="res://screens/tutorial_screen/c_key_pressed.png" type="Texture" id=22]
-[ext_resource path="res://actors/birds/bird.tscn" type="PackedScene" id=23]
+[ext_resource path="res://screens/tutorial_screen/hat.png" type="Texture" id=12]
+[ext_resource path="res://screens/tutorial_screen/flute.png" type="Texture" id=13]
+[ext_resource path="res://screens/tutorial_screen/flute.gd" type="Script" id=14]
+[ext_resource path="res://actors/birds/piccolo_c5.tres" type="AudioStream" id=15]
+[ext_resource path="res://screens/tutorial_screen/key.png" type="Texture" id=16]
+[ext_resource path="res://screens/tutorial_screen/key_pressed.png" type="Texture" id=17]
+[ext_resource path="res://screens/GaroaHackerClubeBold.otf" type="DynamicFontData" id=18]
+[ext_resource path="res://actors/birds/bird.tscn" type="PackedScene" id=19]
 
 [sub_resource type="Animation" id=1]
 
@@ -335,40 +331,40 @@ tracks/5/keys = {
 "values": [ -126.071, -126.071, -126.071 ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Flute/Keys/Z:pressed")
+tracks/6/path = NodePath("Flute/Keys/Key:pressed")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 2, 3, 4 ),
+"times": PoolRealArray( 0, 3, 4 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ false, true, false ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Flute/Keys/X:pressed")
+tracks/7/path = NodePath("Flute/Keys/Key_2:pressed")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/keys = {
-"times": PoolRealArray( 2, 4, 5, 6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 5, 6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ false, false, true, false ]
+"values": [ false, true, false ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("Flute/Keys/C:pressed")
+tracks/8/path = NodePath("Flute/Keys/Key_3:pressed")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
 tracks/8/enabled = true
 tracks/8/keys = {
-"times": PoolRealArray( 2, 6, 7, 8 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 7, 8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ false, false, true, false ]
+"values": [ false, true, false ]
 }
 tracks/9/type = "method"
 tracks/9/path = NodePath("Flute")
@@ -464,7 +460,7 @@ tracks/3/keys = {
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [ true ],
-"method": "set_process"
+"method": "set_process_input"
 } ]
 }
 
@@ -689,7 +685,7 @@ tracks/17/keys = {
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [ false ],
-"method": "set_process"
+"method": "set_process_input"
 } ]
 }
 
@@ -944,6 +940,14 @@ func start():
 	$Button.show()
 	$Button.grab_focus()"
 
+[sub_resource type="DynamicFont" id=11]
+
+size = 46
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 18 )
+_sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
+
 [node name="Tutorial" instance=ExtResource( 1 )]
 
 script = ExtResource( 2 )
@@ -1169,7 +1173,6 @@ _sections_unfolded = [ "Region", "Z Index" ]
 editor/display_folded = true
 position = Vector2( -73, 367 )
 scale = Vector2( 1.5, 1.5 )
-script = ExtResource( 12 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="OKHand" parent="Helper/Arm" index="0"]
@@ -1181,7 +1184,7 @@ _sections_unfolded = [ "Transform" ]
 
 position = Vector2( 71.1724, 15.8161 )
 scale = Vector2( 1.10345, 1.10345 )
-texture = ExtResource( 13 )
+texture = ExtResource( 12 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="Helper_2" parent="." index="5" instance=ExtResource( 11 )]
@@ -1336,14 +1339,14 @@ align = 1
 [node name="Flute" type="Sprite" parent="." index="9"]
 
 position = Vector2( 1154, 316 )
-texture = ExtResource( 14 )
+texture = ExtResource( 13 )
 flip_h = true
-script = ExtResource( 15 )
+script = ExtResource( 14 )
 _sections_unfolded = [ "Offset", "Transform", "Visibility" ]
 
 [node name="SFX" type="AudioStreamPlayer2D" parent="Flute" index="0"]
 
-stream = ExtResource( 16 )
+stream = ExtResource( 15 )
 volume_db = 0.0
 autoplay = false
 max_distance = 2000.0
@@ -1370,7 +1373,7 @@ size_flags_vertical = 1
 alignment = 0
 _sections_unfolded = [ "Visibility" ]
 
-[node name="Z" type="TextureButton" parent="Flute/Keys" index="0"]
+[node name="Key" type="TextureButton" parent="Flute/Keys" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -1389,11 +1392,35 @@ action_mode = 0
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 17 )
-texture_pressed = ExtResource( 18 )
+texture_normal = ExtResource( 16 )
+texture_pressed = ExtResource( 17 )
 _sections_unfolded = [ "Textures" ]
 
-[node name="X" type="TextureButton" parent="Flute/Keys" index="1"]
+[node name="Letter" type="Label" parent="Flute/Keys/Key" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 10.0
+margin_top = 17.0
+margin_right = 60.0
+margin_bottom = 64.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_fonts/font = SubResource( 11 )
+custom_colors/font_color = Color( 0.737255, 0.372549, 0.827451, 1 )
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="Key_2" type="TextureButton" parent="Flute/Keys" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -1409,14 +1436,39 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 toggle_mode = true
+action_mode = 0
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 19 )
-texture_pressed = ExtResource( 20 )
+texture_normal = ExtResource( 16 )
+texture_pressed = ExtResource( 17 )
 _sections_unfolded = [ "Textures" ]
 
-[node name="C" type="TextureButton" parent="Flute/Keys" index="2"]
+[node name="Letter" type="Label" parent="Flute/Keys/Key_2" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 10.0
+margin_top = 17.0
+margin_right = 60.0
+margin_bottom = 64.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_fonts/font = SubResource( 11 )
+custom_colors/font_color = Color( 0.552941, 0.372549, 0.827451, 1 )
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="Key_3" type="TextureButton" parent="Flute/Keys" index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -1432,14 +1484,39 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 toggle_mode = true
+action_mode = 0
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 21 )
-texture_pressed = ExtResource( 22 )
+texture_normal = ExtResource( 16 )
+texture_pressed = ExtResource( 17 )
 _sections_unfolded = [ "Textures" ]
 
-[node name="Birb" parent="." index="10" instance=ExtResource( 23 )]
+[node name="Letter" type="Label" parent="Flute/Keys/Key_3" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 10.0
+margin_top = 17.0
+margin_right = 60.0
+margin_bottom = 64.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_fonts/font = SubResource( 11 )
+custom_colors/font_color = Color( 0.215686, 0.784314, 0.443137, 1 )
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="Birb" parent="." index="10" instance=ExtResource( 19 )]
 
 editor/display_folded = true
 position = Vector2( -30, -60 )
@@ -1452,7 +1529,7 @@ flip_h = true
 
 scale = Vector2( -0.5, 0.5 )
 
-[node name="Birb_2" parent="." index="11" instance=ExtResource( 23 )]
+[node name="Birb_2" parent="." index="11" instance=ExtResource( 19 )]
 
 editor/display_folded = true
 position = Vector2( 1090, -30 )
@@ -1465,7 +1542,7 @@ sprite_row = 1
 
 frame = 7
 
-[node name="Birb_3" parent="." index="12" instance=ExtResource( 23 )]
+[node name="Birb_3" parent="." index="12" instance=ExtResource( 19 )]
 
 editor/display_folded = true
 position = Vector2( 880, -50 )
