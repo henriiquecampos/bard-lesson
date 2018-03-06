@@ -393,9 +393,12 @@ tracks/10/loop_wrap = true
 tracks/10/imported = false
 tracks/10/enabled = true
 tracks/10/keys = {
-"times": PoolRealArray( 4, 6, 8 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 4, 6, 8, 9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "values": [ {
+"args": [  ],
+"method": "stop"
+}, {
 "args": [  ],
 "method": "stop"
 }, {
@@ -1202,7 +1205,7 @@ _sections_unfolded = [ "Visibility" ]
 [node name="Helper_2" parent="." index="5" instance=ExtResource( 11 )]
 
 editor/display_folded = true
-position = Vector2( 899, 715.2 )
+position = Vector2( 831, 645.6 )
 rotation = -2.20035
 scale = Vector2( 1.5, 1.5 )
 z_index = 1
@@ -1316,7 +1319,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-text = "heyo, this fox over there is rowan. he is now on his journey to become a bard."
+text = "it gets more trembly going to its bottom, and more bassy going to its top"
 align = 1
 valign = 1
 autowrap = true
